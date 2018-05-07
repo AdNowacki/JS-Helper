@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script async defer>
+        function cssLoad( cssArr ) {
+            cssArr.forEach( ( elem, ind ) => {
+                var link = document.createElement('link');
+                link.setAttribute('rel', 'stylesheet');
+                link.setAttribute('type', 'text/css');
+                link.setAttribute('href', elem + ".css" );
+                document.head.appendChild( link );
+            } );
+        }
+
+        let css = ['css/reset', 'css/style'];
+        cssLoad( css );
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
