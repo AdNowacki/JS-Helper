@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .elements {
+            width: 500px;
+            height: 150px;
+            border: 1px solid #ccc;
+            transition: all .3s;
+        }
+
+        .active {
+            background-color: cadetblue;
+            transform: translateX(190px);
+        }
+    </style>
+</head>
+<body>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="elements"></div>
+    <div class="elements"></div>
+    <div class="elements"></div>
+    <div class="elements"></div>
+    <div class="elements"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="elements"></div>
+    <div class="elements"></div>
+    <div class="elements"></div>
+    <div class="elements"></div>
+    <div class="elements"></div>
+    <div class="elements"></div>
+    <div class="elements"></div>
+    <div class="elements"></div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script>
+        function elementView( selector, addClass, offset = 0, reverse = true ) {
+            let topScroll = document.documentElement.scrollTop;
+            let els = document.querySelectorAll(selector);
+            let view = topScroll + window.innerHeight;
+            [...els].forEach(function( elem, ind ){
+                    let pos = elem.getBoundingClientRect().top + topScroll;
+                    let currentView = ( view - offset );
+                    if( currentView >= pos ) {
+                        elem.classList.add(addClass);
+                    }
+                    if( reverse && currentView < pos ) {
+                        elem.classList.remove(addClass);
+                    }
+            });
+        }
+
+        window.addEventListener('scroll',function(){
+            // elementView( '.elements', 'active', 200, false );
+            elementView( '.elements', 'active', 400, true );
+        })
+    </script>
+
+</body>
+</html>
